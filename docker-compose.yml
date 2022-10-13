@@ -19,7 +19,7 @@ services:
      volumes:
       - data:/var/lib/odoo
      ports:
-       - "8000:80"
+       - "8069:8069"
      restart: always
      environment:
        HOST: db:3306
