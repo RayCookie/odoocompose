@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.2'
 
 services:
    db:
@@ -18,13 +18,15 @@ services:
      image: odoo:14
      volumes:
       - data:/var/lib/odoo
+      - extra-addons:/mnt/extra-addons
      ports:
-       - "8069:8069"
+       - 8069:8069
      restart: always
      environment:
-       HOST: db:3306
+       HOST: db
        USER: odoo
        PASSWORD: odoo
 volumes:
     db_data:
     data: 
+    extra-addons:
